@@ -1,10 +1,34 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div id="nav" class="mb-5">
+      <b-navbar toggleable="sm" type="light" variant="light">
+        <b-navbar-toggle target="nav-text-collapse"></b-navbar-toggle>
+
+        <b-navbar-brand>Adopt</b-navbar-brand>
+
+        <b-collapse
+          class="justify-content-center"
+          id="nav-text-collapse"
+          is-nav
+        >
+          <b-navbar-nav>
+            <router-link to="/" class="mr-3">Home</router-link>
+          </b-navbar-nav>
+
+          <b-navbar-nav>
+            <router-link to="/cats" class="mr-3">Cats</router-link>
+          </b-navbar-nav>
+
+          <b-navbar-nav>
+            <router-link to="/dogs" class="mr-3">Dogs</router-link>
+          </b-navbar-nav>
+        </b-collapse>
+      </b-navbar>
     </div>
-    <router-view/>
+
+    <b-container>
+      <router-view />
+    </b-container>
   </div>
 </template>
 
@@ -18,7 +42,7 @@
 }
 
 #nav {
-  padding: 30px;
+  // padding: 30px;
 
   a {
     font-weight: bold;
